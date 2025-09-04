@@ -2,22 +2,37 @@
 
   <body>
     <nav>
-      <a href="http://google.com">Home page</a>
+      <a href="/">Home page</a>
       <a href="#target">Target</a>
     </nav>
     <main>
-
+    <!-- comments in HTML are as easy as open-angle-bracket-bang-dash-dash closed by dash-dash-close-angle-bracket -->
 
       <form method="post" action="http://google.com">
 
-        <input name="name" />
-        <input name="age" type="number" />
-        <input name="email" type="email" />
-        <input type="checkbox" name="likespam" value="yes" />
-        <input type="radio" name="rad" value="1" />
-        <input type="radio" name="rad" value="2" />
-        <input type="radio" name="rad" value="3" />
-        <input type="radio" name="rad" value="4" />
+        <!-- labels have a for attribute that ties to an input element's 
+          id. When you click on the label, focus will be given to the
+          associated input element -->
+        <label for="nameinput">Name:</label>
+        <input name="name" id="nameinput" />
+
+        <label for="ageinput">Age:</label>
+        <input name="age" id="ageinput" type="number" />
+
+        <label for="emailinput">Spam target:</label>
+        <input name="email" type="email" id="emailinput" />
+
+        <label for="spam">Check this box if you're cool:</label>
+        <input type="checkbox" id="spam" name="likespam" value="yes" />
+
+        <input type="radio" id="rad1" name="rad" value="1" />
+        <label for="rad1">1</label>
+        <input type="radio" id="rad2" name="rad" value="2" />
+        <label for="rad2">1</label>
+        <input type="radio" id="rad3" name="rad" value="3" />
+        <label for="rad3">1</label>
+        <input type="radio" id="rad4" name="rad" value="4" />
+        <label for="rad4">1</label>
 
         <textarea></textarea>
 
@@ -40,7 +55,16 @@
       <img src="example.png" />
       <h6>Big heading</h6>
       <p>garbage</p>
-      <p>garbage</p>
+      <p>
+      So, let's say for some reason you want to put a less-than or greater-than symbol in the text of your HTML document.
+      Unfortunately, those are the magic characters that we use when constructing the HTML.
+      Sticking a stray less than anywhere will confuse the browser.
+      It will try, but you did it wrong and will be sad.
+      Instead try instead <code>&amp;lt;</code> instead.
+      </p>
+      <p>
+      Wow!
+      </p>
       <p class="fancy">garbage</p>
       <p>garbage</p>
       <p>garbage</p>
