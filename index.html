@@ -1,19 +1,25 @@
 <html>
-
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 480px)" />
+  </head>
   <body>
     <nav>
       <a href="/">Home page</a>
       <a href="#target">Target</a>
     </nav>
     <main>
+      <audio src="hi.mp3" controls></audio>
     <!-- comments in HTML are as easy as open-angle-bracket-bang-dash-dash closed by dash-dash-close-angle-bracket -->
+
+      <a href="derp.html">this is the counter example</a>
 
       <form method="post" action="http://google.com">
 
         <!-- labels have a for attribute that ties to an input element's 
           id. When you click on the label, focus will be given to the
           associated input element -->
-        <label for="nameinput">Name:</label>
+        <label class="special" for="nameinput" id="monkeypaw">Name:</label>
         <input name="name" id="nameinput" />
 
         <label for="ageinput">Age:</label>
@@ -66,11 +72,10 @@
       Wow!
       </p>
       <p class="fancy">garbage</p>
-      <p>garbage</p>
-      <p>garbage</p>
-      <p>garbage</p>
-      <p>garbage</p>
-      <p style="font-weight: bold;">garbage</p>
+      <p class="special">garbage</p>
+      <p class="special">garbage</p>
+      <p class="special">garbage</p>
+      <p class="special">garbage</p>
       <p>garbage</p>
       <p>garbage</p>
       <p>garbage</p>

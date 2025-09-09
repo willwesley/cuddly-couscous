@@ -1,0 +1,43 @@
+
+
+label {
+  color: red!important;
+}
+
+label {
+  color: blue;
+}
+label.special {
+  color: green;
+}
+
+#monkeypaw {
+  color: black!important;
+}
+
+
+p.special {
+  font-weight: bold;
+  color: red;
+}
+#nameinput {
+  border: 5px dashed green;
+}
+p:nth-child(2n+1) {
+  color: orange;
+}
+nav a {
+  border: 1px dotted grey;
+}
+main form > label.special {
+  background: yellow;
+  color: green;
+}
+
+label:hover {
+  font-size: 2em;
+}
+label {
+  transition: all 1s;
+}
+
