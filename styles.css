@@ -11,6 +11,12 @@ label.special {
   color: green;
 }
 
+h1, p {
+  text-decoration: underline;
+}
+video {
+  width: 90vw;
+}
 #monkeypaw {
   color: black!important;
 }

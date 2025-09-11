@@ -10,6 +10,7 @@
     </nav>
     <main>
       <audio src="hi.mp3" controls></audio>
+      <video src="vid.mp4" controls></video>
     <!-- comments in HTML are as easy as open-angle-bracket-bang-dash-dash closed by dash-dash-close-angle-bracket -->
 
       <a href="derp.html">this is the counter example</a>
@@ -107,5 +108,20 @@
       <p>garbage</p>
       <p>garbage</p>
     </main>
+    <script>
+      document.body.querySelector('h1').addEventListener(
+        'click',
+        () => {
+          console.log('ouch')
+        }
+      )
+      const ps = document.body.querySelectorAll('p')
+      for(let p of ps) {
+        p.addEventListener('click', () => p.remove())
+        p.addEventListener('click', () => console.log('i went too!'))
+        p.onclick = () => console.log('haha, suckers')
+        p.onclick = () => console.log('ah geez rick')
+      }
+    </script>
   </body>
 </html>
