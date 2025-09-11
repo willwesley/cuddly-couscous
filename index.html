@@ -4,6 +4,18 @@
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 480px)" />
   </head>
   <body>
+    <script>
+      // In class, I was trying to add a load event listener to document.body, which
+      // is not the way to do that anymore. However, the load event does "bubble" up
+      // to the window, so here's what I guess I meant to write.
+      window.addEventListener('load', () => {
+        console.log('Yo dawg!')
+      })
+    </script>
+    <!-- a more modern approach is to have a separate JS file, referenced by the src
+      attribute, and then use attributes to defer running the script as below: -->
+    <script defer src="luhu.js">
+    </script>
     <nav>
       <a href="/">Home page</a>
       <a href="#target">Target</a>
