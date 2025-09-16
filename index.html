@@ -206,6 +206,12 @@
       asyncExample()
       console.log('all done setting up')
 
+      // JSON is a serialization format for sending JavaScript values
+      // over a text only medium. In the global scope, there is an object
+      // `JSON` that has two amazing methods: `parse` and `stringify`:
+      console.log(JSON.stringify({ a: 2, neat: "isn't it?" }))
+      console.log(JSON.stringify({ a: 2, neat: "isn't it?" }, null, 2))
+      console.log(JSON.parse('{"setup":"a string walks into a bar"}'))
     </script>
   </body>
 </html>
