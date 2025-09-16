@@ -134,6 +134,78 @@
         p.onclick = () => console.log('haha, suckers')
         p.onclick = () => console.log('ah geez rick')
       }
+
+      // string
+      const a ="what"
+      const b ='what'
+      const c =`what`
+      // number
+      let anumber = 12345
+      let adecimal = 3.14159
+      let abinary = 0b1010101
+      let anoctal = 0123456
+      let ahex = 0xfeedbeef
+      // booleans
+      const bool1 = true
+      const bool2 = false
+      // arrays
+      let arr = [2,3,4,'oops']
+      // object
+      let myobj = {
+              wat: "omg",
+              another: 33,
+      }
+      myobj.wat
+      myobj['wat']
+
+      function derp(firstvar, secondvariable) {
+        console.log('I was clicked!')
+      }
+      const herp = function() {
+        console.log('I was clicked, too!')
+      }
+      const ferp = () => {
+        console.log('I was clicked, three!')
+      }
+      document.body.addEventListener('click', derp)
+      document.body.addEventListener('click', herp)
+      document.body.addEventListener('click', ferp)
+
+      const doubleEm = (i) => i * 2
+      const arr1 = [1,2,3,4,5]
+      const arr2 = arr1.map(doubleEm)
+      const isOdd = (i) => i % 2 == 1
+      const filtered = arr1.filter(isOdd)
+
+
+      const exPromise = fetch("example.json")
+      const parseText = (response) => response.text()
+      const parseJson = (response) => response.json()
+      console.log(
+              exPromise
+                .then(parseJson)
+                .then(console.log)
+              .catch((err) => console.log("wtf! " + err))
+              .finally(() => console.log('yippee'))
+
+      )
+
+      async function asyncExample() {
+        console.log('making request')
+        try {
+          const response = await fetch('example.json')
+          const json = await response.json()
+          console.log("async", json)
+          console.log('complete')
+        } catch(e) {
+          console.error('Oi! ' + e)
+        } finally {
+          console.log('yeah, buddy!')
+        }
+      }
+      asyncExample()
+      console.log('all done setting up')
+
     </script>
   </body>
 </html>

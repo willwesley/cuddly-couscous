@@ -1,0 +1,7 @@
+{
+  "example": "quite similar to writing literals",
+  "some rules": "keys need to be double quoted",
+  "and single": "quotes are not permitted",
+  "nor are": "functions, sad face",
+  derp": 1000
+}
