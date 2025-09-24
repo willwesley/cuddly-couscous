@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  php:
+    image: stupidphp
+    # we're mounting a volume here so we can manipulate
+    # the php scripts on the host file system and have
+    # the changes appear in the container without building
+    # the image and restarting the container each time.
+    # Good for development, not good for production.
+    volumes:
+      - ./:/var/www/html
+    # mapping port 4000 on host to 80 on container
+    ports:
+      - 4000:80
+    # build context if host system doesn't have stupidphp
+    # image.
+    build: ./
+
+  mysql:
+    image: mysql
+    volumes:
+      # this volume provides initialization SQL to the
+      # mysql container - this is a feature specific to
+      # mysql/mariadb containers.
+      - ./data:/docker-entrypoint-initdb.d
+      # this volume provides database persistence across
+      # container restarts. the volume is somehwere in
+      # /var/docker/volumes and we don't care.
+      #- db:/var/lib/mysql
+    environment:
+      # this is useless now that our init scripts set the
+      # root password to something else. This is also a
+      # mysql/mariadb specific feature parameter thing
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+
+  # whoa, adding the nodejs container we built in the
+  # containernexample to this docker-compose service stack!
+  # nodejs:
+  #   image: mysqlwebserver
+  #   ports:
+  #     - 5000:3000
+
+# for docker managed volumes, we need to declare them
+# since they live outside the container(s) that use them
+# Cool story, yes, more than one container can use a given
+# volume. it's up to you to decide how bad an idea that
+# might be...
+volumes:
+  db:
