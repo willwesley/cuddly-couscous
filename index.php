@@ -6,10 +6,18 @@
 <?php
 
 $conn = new mysqli('mysql', 'root', 'password', 'db34');
-$sql = 'SELECT * FROM users WHERE name = "'
-   . $_GET['name'] . '" AND password = SHA2("' . $_GET['password'] . '", 256)';
 
-$result =  $conn->query($sql);
+// Don't do this. This bad.
+// $sql = 'SELECT * FROM users WHERE name = "'
+//    . $_GET['name'] . '" AND password = SHA2("' . $_GET['password'] . '", 256)';
+// $result =  $conn->query($sql);
+
+// this better.
+$sql = 'SELECT * FROM users WHERE name = ? AND password = SHA2(?, 256)';
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $_GET['name'], $_GET['password']);
+$stmt->execute();
+$result = $stmt->get_result();
 
 echo $sql;
 
