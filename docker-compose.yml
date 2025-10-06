@@ -2,7 +2,7 @@ version: "3"
 
 services:
   php:
-    image: stupidphp
+    image: php:mysql
     # we're mounting a volume here so we can manipulate
     # the php scripts on the host file system and have
     # the changes appear in the container without building
@@ -29,10 +29,7 @@ services:
       # /var/docker/volumes and we don't care.
       #- db:/var/lib/mysql
     environment:
-      # this is useless now that our init scripts set the
-      # root password to something else. This is also a
-      # mysql/mariadb specific feature parameter thing
-      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_ROOT_PASSWORD=password
 
   # whoa, adding the nodejs container we built in the
   # containernexample to this docker-compose service stack!
