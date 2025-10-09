@@ -27,16 +27,16 @@ services:
       # this volume provides database persistence across
       # container restarts. the volume is somehwere in
       # /var/docker/volumes and we don't care.
-      #- db:/var/lib/mysql
+      - db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
 
   # whoa, adding the nodejs container we built in the
   # containernexample to this docker-compose service stack!
-  # nodejs:
-  #   image: mysqlwebserver
-  #   ports:
-  #     - 5000:3000
+  nodejs:
+    image: jsserver
+    ports:
+      - 5000:5000
 
 # for docker managed volumes, we need to declare them
 # since they live outside the container(s) that use them
